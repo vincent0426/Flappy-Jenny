@@ -6,23 +6,23 @@
 
 #define SPLASH_STATE_SHOW_TIME 0  // 開啟畫面會出現多久
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/Splash Background.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/res/sky.png"
-#define GAME_BACKGROUND_FILEPATH "/Users/vincenthsieh/Downloads/1782494.psd"
-#define GAME_OVER_BACKGROUND_FILEPATH "Resources/res/sky.png"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
+#define MAIN_MENU_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
+#define GAME_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
 
 #define GAME_TITLE_FILEPATH "Resources/res/title.png"
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
 
-#define PIPE_UP_FILEPATH "/Users/vincenthsieh/Downloads/PIPEUP.png"
-#define PIPE_DOWN_FILEPATH "/Users/vincenthsieh/Downloads/PIPEDOWN.png"
+#define PIPE_UP_FILEPATH "/Users/huangziyong/Downloads/26r70003p5543oq2q016.png"
+#define PIPE_DOWN_FILEPATH "/Users/huangziyong/Downloads/pipeDown.png"
 
 #define LAND_FILEPATH "Resources/res/land.png"
 
-#define BIRD_FRAME_1_FILEPATH "/Users/vincenthsieh/Downloads/133961721_444563653373081_7128384290297356912_n.png"
-#define BIRD_FRAME_2_FILEPATH "/Users/vincenthsieh/Downloads/133961721_444563653373081_7128384290297356912_n.png"
-#define BIRD_FRAME_3_FILEPATH "/Users/vincenthsieh/Downloads/133961721_444563653373081_7128384290297356912_n.png"
-#define BIRD_FRAME_4_FILEPATH "/Users/vincenthsieh/Downloads/133961721_444563653373081_7128384290297356912_n.png"
+#define BIRD_FRAME_1_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define BIRD_FRAME_2_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define BIRD_FRAME_3_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define BIRD_FRAME_4_FILEPATH "/Users/huangziyong/Downloads/111.png"
 
 #define SCORING_PIPE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
 
@@ -80,3 +80,5 @@ enum GameStates
 #define SILVER_MEDAL_SCORE 5
 #define GOLD_MEDAL_SCORE 10
 #define PLATINUM_MEDAL_SCORE 15
+
+#define BALL_FILEPATH "/Users/huangziyong/Downloads/111.png"

@@ -10,6 +10,7 @@
 #include "Collision.hpp"
 #include "Flash.hpp"
 #include "HUD.hpp"
+#include "Ball.hpp"
 
 namespace Sonar
 {
@@ -34,6 +35,7 @@ namespace Sonar
         Collision collision;
         Flash* flash;
         HUD* hud;
+        Ball* ball;
         
         sf::Clock clock;
         sf::Time tempclock;
@@ -51,5 +53,6 @@ namespace Sonar
         float FREQUENCY;
         bool nowPause;
         float interval;
+        bool addBall;
     };
 }

@@ -40,17 +40,22 @@ namespace Sonar
         this->_data->assets.LoadTexture("Bird Frame 4", BIRD_FRAME_4_FILEPATH);
         this->_data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);
         this->_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
+        this -> _data-> assets.LoadTexture("Ball", BALL_FILEPATH);
         
         pipe = new Pipe(_data);
         land = new Land(_data);
         bird = new Bird(_data);
         flash = new Flash(_data);
         hud = new HUD(_data);
+        ball = new Ball(_data);
         
         _background.setTexture(this->_data->assets.GetTexture("Game Background"));
         
         _score = 0;
+        addBall = false;
         hud->UpdateScore(_score);
+        pipe -> UpdateScore(_score);
+        ball -> UpdateScore(_score);
         
         _gameState = GameStates::eReady;
     }
@@ -107,7 +112,10 @@ namespace Sonar
             if(_gameState == GameStates::ePlaying)
             {
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
+                ball -> UpdateScore(_score);
                 pipe->MovePipes(dt);
+                ball->MoveBall(dt);
+                
                 if( FIRST_THRESHOLD <= _score && _score < SECOND_THRESHOLD )
                 {
                     FREQUENCY = 1.0f;
@@ -144,8 +152,18 @@ namespace Sonar
                     pipe->SpawnBottomPipe();
                     pipe->SpawnTopPipe();
                     pipe->SpawnScoringPipe();
+                    addBall = true;
                     
                     clock.restart();
+                }
+                else if(!nowPause && clock.getElapsedTime().asSeconds() + 0.3 > FREQUENCY)
+                {
+                    if(addBall){
+                        ball->RandomiseBallOffset();
+                        ball->SpawnBall();
+                        addBall = false;
+                    }
+                    
                 }
                 bird->Update(dt);
                 
@@ -173,6 +191,22 @@ namespace Sonar
                         
                         _hitSound.play();
                     }
+                }
+                
+                // for ball collison detection
+                std::vector<sf::Sprite> ballSprite = ball-> GetSprites();
+                for(int i = 0; i < ballSprite.size(); i++)
+                {
+                    if(collision.CheckSpriteCollision(ballSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                    {
+                        _score++;
+                        ball -> ballErase(i);
+                        hud -> UpdateScore(_score);
+                        pipe-> UpdateScore(_score);
+                        ball-> UpdateScore(_score);
+                        break;
+                    }
+                    
                 }
                 
                 if(_gameState == GameStates::ePlaying)
@@ -214,6 +248,7 @@ namespace Sonar
         this->pipe->DrawPipes();
         this->land->DrawLand();
         this->bird->Draw();
+        this -> ball -> DrawBall();
         
         this->flash->Draw();
         

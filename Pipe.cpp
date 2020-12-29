@@ -81,15 +81,27 @@ namespace Sonar
             }
             else
             {
-                //sf::Vector2f position = scoringPipes.at(i).getPosition();
-                /*if(totalclock.getElapsedTime().asSeconds() >= 10)
-                    movement = FAST_PIPE_MOVEMENT_SPEED * dt;
-                else movement = PIPE_MOVEMENT_SPEED * dt;*/
                 movement = Pipe::UpdateSpeed(_nowScore) * dt;
+                if(_nowScore >= 20)
+                {
+                    if(i%2==0)
+                    {
+                        scoringPipes.at(i).move(-movement, 2);
+                    }
+                    else
+                    {
+                        scoringPipes.at(i).move(-movement, -2);
+                    }
+                }
+                else
+                {
+                    scoringPipes.at(i).move(-movement, 0);
+                }
+            }
                 scoringPipes.at(i).move(-movement, 0);
             }
         }
-    }
+    
     
     void Pipe::DrawPipes()
     {
