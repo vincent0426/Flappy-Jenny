@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     SplashState::SplashState(GameDataRef data) : _data(data)
     {

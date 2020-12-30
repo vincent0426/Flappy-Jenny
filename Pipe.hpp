@@ -5,7 +5,7 @@
 #include <vector>
 #include "DEFINITIONS.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     class Pipe
     {

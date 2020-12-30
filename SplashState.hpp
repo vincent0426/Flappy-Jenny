@@ -4,7 +4,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     class SplashState : public State
     {

@@ -1,6 +1,6 @@
 #include "Bird.hpp"
 #include "GameState.hpp"
-namespace Jeffery
+namespace APlusPlus
 {
     Bird::Bird(GameDataRef data) : _data(data)
     {

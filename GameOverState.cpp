@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     GameOverState::GameOverState(GameDataRef data, int score) : _data(data), _score(score)
     {

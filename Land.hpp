@@ -4,7 +4,7 @@
 #include "Game.hpp"
 #include <vector>
 
-namespace Jeffery
+namespace APlusPlus
 {
     class Land
     {

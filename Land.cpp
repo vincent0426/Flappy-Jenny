@@ -1,7 +1,7 @@
 #include "Land.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     Land::Land(GameDataRef data) : _data(data)
     {

@@ -1,6 +1,6 @@
 #include "Flash.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     Flash::Flash(GameDataRef data) : _data(data)
     {

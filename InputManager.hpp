@@ -2,7 +2,7 @@
 
 #include "SFML/Graphics.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     class InputManager
     {

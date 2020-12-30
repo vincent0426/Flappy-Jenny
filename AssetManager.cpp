@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "AssetManager.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     void AssetManager::LoadTexture(std::string name, std::string fileName)
     {

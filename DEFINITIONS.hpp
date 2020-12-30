@@ -1,15 +1,14 @@
 #pragma once
 
-#define SCREEN_WIDTH 1024
+#define SCREEN_WIDTH 768
 #define SCREEN_HEIGHT 1024
-
 
 #define SPLASH_STATE_SHOW_TIME 0  // 開啟畫面會出現多久
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
-#define GAME_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
+#define MAIN_MENU_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
+#define GAME_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
 
 #define GAME_TITLE_FILEPATH "Resources/res/Title.png"
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
@@ -82,3 +81,4 @@ enum GameStates
 #define PLATINUM_MEDAL_SCORE 15
 
 #define BALL_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define STAR_FILEPATH "/Users/huangziyong/Downloads/111.png"

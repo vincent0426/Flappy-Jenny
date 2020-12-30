@@ -6,7 +6,7 @@
 #include "DEFINITIONS.hpp"
 
 
-namespace Jeffery {
+namespace APlusPlus {
     class Ball{
     public:
         Ball(GameDataRef data);
@@ -23,11 +23,9 @@ namespace Jeffery {
     private:
         GameDataRef _data;
         std::vector<sf::Sprite> ballSprites;
-        sf::Clock totalclock;
         int _ballSpawnYOffset;
         float movement;
         int _landHeight;
-        bool add = false;
         int MoveSpeed;
         int _nowScore;
     };

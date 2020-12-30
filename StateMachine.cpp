@@ -1,6 +1,6 @@
 #include "StateMachine.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     void StateMachine::AddState(StateRef newState, bool isReplacing)
     {

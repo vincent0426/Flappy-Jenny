@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     MainMenuState::MainMenuState(GameDataRef data) : _data(data) {}
     

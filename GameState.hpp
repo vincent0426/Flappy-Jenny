@@ -11,8 +11,9 @@
 #include "Flash.hpp"
 #include "HUD.hpp"
 #include "Ball.hpp"
+#include "Star.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     class GameState : public State
     {
@@ -36,6 +37,7 @@ namespace Jeffery
         Flash* flash;
         HUD* hud;
         Ball* ball;
+        Star* star;
         
         sf::Clock clock;
         sf::Time tempclock;
@@ -54,5 +56,8 @@ namespace Jeffery
         bool nowPause;
         float interval;
         bool addBall;
+        bool addStar;
+        float starTime;
+        
     };
 }

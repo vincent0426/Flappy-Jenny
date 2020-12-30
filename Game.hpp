@@ -7,7 +7,7 @@
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     struct GameData
     {

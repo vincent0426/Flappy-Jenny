@@ -4,7 +4,7 @@
 #include "Game.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     class Flash
     {

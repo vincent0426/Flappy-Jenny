@@ -1,6 +1,6 @@
 #include "InputManager.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     bool InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window)
     {

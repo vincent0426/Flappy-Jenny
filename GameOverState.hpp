@@ -5,7 +5,7 @@
 #include "Game.hpp"
 #include <fstream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     class GameOverState : public State
     {

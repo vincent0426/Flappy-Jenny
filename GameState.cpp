@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     GameState::GameState(GameDataRef data) : _data(data) {}
     
@@ -41,6 +41,7 @@ namespace Jeffery
         this->_data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);
         this->_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
         this -> _data-> assets.LoadTexture("Ball", BALL_FILEPATH);
+        this-> _data -> assets.LoadTexture("Star", STAR_FILEPATH);
         
         pipe = new Pipe(_data);
         land = new Land(_data);
@@ -48,14 +49,18 @@ namespace Jeffery
         flash = new Flash(_data);
         hud = new HUD(_data);
         ball = new Ball(_data);
+        star = new Star(_data);
         
         _background.setTexture(this->_data->assets.GetTexture("Game Background"));
         
         _score = 0;
+        starTime = -0.3;
         addBall = false;
+        addStar = false;
         hud->UpdateScore(_score);
         pipe -> UpdateScore(_score);
         ball -> UpdateScore(_score);
+        star -> UpdateScore(_score);
         
         _gameState = GameStates::eReady;
     }
@@ -112,9 +117,12 @@ namespace Jeffery
             if(_gameState == GameStates::ePlaying)
             {
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
+                starTime -= dt;
+                star -> UpdateScore(_score);
                 ball -> UpdateScore(_score);
                 pipe->MovePipes(dt);
                 ball->MoveBall(dt);
+                star -> MoveStar(dt);
                 
                 if( FIRST_THRESHOLD <= _score && _score < SECOND_THRESHOLD )
                 {
@@ -153,7 +161,7 @@ namespace Jeffery
                     pipe->SpawnTopPipe();
                     pipe->SpawnScoringPipe();
                     addBall = true;
-                    
+                    addStar = true;
                     clock.restart();
                 }
                 else if(!nowPause && clock.getElapsedTime().asSeconds() + 0.3 > FREQUENCY)
@@ -162,6 +170,12 @@ namespace Jeffery
                         ball->RandomiseBallOffset();
                         ball->SpawnBall();
                         addBall = false;
+                    }
+                    
+                    if(addStar){
+                        star -> RandomiseStarOffset();
+                        star -> SpawnStar();
+                        addStar = false;
                     }
                     
                 }
@@ -179,17 +193,19 @@ namespace Jeffery
                         _hitSound.play();
                     }
                 }
-                
-                // for pipe collision detection
-                std::vector<sf::Sprite> pipeSprite = pipe->GetSprites();
-                
-                for(int i = 0; i < pipeSprite.size(); i++)
+                if(starTime <= 0)
                 {
-                    if(collision.CheckSpriteCollision(pipeSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                    // for pipe collision detection
+                    std::vector<sf::Sprite> pipeSprite = pipe->GetSprites();
+                    
+                    for(int i = 0; i < pipeSprite.size(); i++)
                     {
-                        _gameState = GameStates::eGameOver;
-                        
-                        _hitSound.play();
+                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                        {
+                            _gameState = GameStates::eGameOver;
+                            
+                            _hitSound.play();
+                        }
                     }
                 }
                 
@@ -204,6 +220,19 @@ namespace Jeffery
                         hud -> UpdateScore(_score);
                         pipe-> UpdateScore(_score);
                         ball-> UpdateScore(_score);
+                        break;
+                    }
+                    
+                }
+                
+                // for star collison detection
+                std::vector<sf::Sprite> starSprite = star -> GetSprites();
+                for(int i = 0; i < starSprite.size(); i++)
+                {
+                    if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, bird ->GetSprite(), DETECTION_SCALE))
+                    {
+                        starTime = dt * 600;
+                        star -> starErase(i);
                         break;
                     }
                     
@@ -246,6 +275,7 @@ namespace Jeffery
         this->_data->window.draw(this->_background);
         
         this->pipe->DrawPipes();
+        this -> star-> DrawStar();
         this->land->DrawLand();
         this->bird->Draw();
         this -> ball -> DrawBall();

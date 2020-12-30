@@ -1,7 +1,7 @@
 #include "Pipe.hpp"
 #include <iostream>
 
-namespace Jeffery
+namespace APlusPlus
 {
     Pipe::Pipe(GameDataRef data) : _data(data)
     {

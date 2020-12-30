@@ -6,7 +6,7 @@
 
 int main()
 {
-    Jeffery::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Flappy Bird");
+    APlusPlus::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Flappy Bird");
     
     return EXIT_SUCCESS;
 }

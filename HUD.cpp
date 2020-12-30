@@ -1,7 +1,7 @@
 #include "HUD.hpp"
 #include <string>
 
-namespace Jeffery
+namespace APlusPlus
 {
     HUD::HUD(GameDataRef data) : _data(data)
     {

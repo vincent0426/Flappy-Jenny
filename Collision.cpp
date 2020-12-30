@@ -1,6 +1,6 @@
 #include "Collision.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     Collision::Collision() {}
     Collision::~Collision() {};

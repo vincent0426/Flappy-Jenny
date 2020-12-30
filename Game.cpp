@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
-namespace Jeffery
+namespace APlusPlus
 {
     Game::Game(int width, int height, std::string title)
     {

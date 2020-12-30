@@ -2,7 +2,7 @@
 #include "Ball.hpp"
 #include <iostream>
 
-namespace Jeffery {
+namespace APlusPlus{
     Ball::Ball(GameDataRef data): _data(data){
         _landHeight = this->_data->assets.GetTexture("Land").getSize().y;
         _ballSpawnYOffset = 10;

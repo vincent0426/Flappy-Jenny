@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Jeffery
+namespace APlusPlus
 {
     class State
     {

@@ -5,7 +5,7 @@
 
 #include "State.hpp"
 
-namespace Jeffery
+namespace APlusPlus
 {
     typedef std::unique_ptr<State> StateRef;
     
