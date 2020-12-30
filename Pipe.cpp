@@ -1,7 +1,7 @@
 #include "Pipe.hpp"
 #include <iostream>
 
-namespace Sonar
+namespace Jeffery
 {
     Pipe::Pipe(GameDataRef data) : _data(data)
     {

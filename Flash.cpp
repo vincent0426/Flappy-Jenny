@@ -1,6 +1,6 @@
 #include "Flash.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     Flash::Flash(GameDataRef data) : _data(data)
     {

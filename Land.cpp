@@ -1,7 +1,7 @@
 #include "Land.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     Land::Land(GameDataRef data) : _data(data)
     {

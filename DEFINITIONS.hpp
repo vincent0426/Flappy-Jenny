@@ -1,6 +1,6 @@
 #pragma once
 
-#define SCREEN_WIDTH 768
+#define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 1024
 
 
@@ -11,7 +11,7 @@
 #define GAME_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/11.png"
 
-#define GAME_TITLE_FILEPATH "Resources/res/title.png"
+#define GAME_TITLE_FILEPATH "Resources/res/Title.png"
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
 
 #define PIPE_UP_FILEPATH "/Users/huangziyong/Downloads/26r70003p5543oq2q016.png"

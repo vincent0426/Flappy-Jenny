@@ -7,7 +7,7 @@
 
 #include <vector>
 
-namespace Sonar
+namespace Jeffery
 {
     class Bird
     {

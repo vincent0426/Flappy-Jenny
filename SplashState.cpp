@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Sonar
+namespace Jeffery
 {
     SplashState::SplashState(GameDataRef data) : _data(data)
     {

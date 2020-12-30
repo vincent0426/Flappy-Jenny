@@ -5,7 +5,7 @@
 #include "Game.hpp"
 #include <fstream>
 
-namespace Sonar
+namespace Jeffery
 {
     class GameOverState : public State
     {

@@ -3,7 +3,7 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 
-namespace Sonar
+namespace Jeffery
 {
     class AssetManager
     {

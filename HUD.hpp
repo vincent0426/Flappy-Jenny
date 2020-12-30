@@ -5,7 +5,7 @@
 #include "DEFINITIONS.hpp"
 #include "Game.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     class HUD
     {

@@ -12,7 +12,7 @@
 #include "HUD.hpp"
 #include "Ball.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     class GameState : public State
     {

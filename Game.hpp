@@ -7,7 +7,7 @@
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     struct GameData
     {

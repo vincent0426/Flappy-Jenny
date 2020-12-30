@@ -1,6 +1,6 @@
 #include "Bird.hpp"
 #include "GameState.hpp"
-namespace Sonar
+namespace Jeffery
 {
     Bird::Bird(GameDataRef data) : _data(data)
     {

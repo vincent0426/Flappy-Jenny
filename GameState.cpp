@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Sonar
+namespace Jeffery
 {
     GameState::GameState(GameDataRef data) : _data(data) {}
     

@@ -1,6 +1,6 @@
 #include "Collision.hpp"
 
-namespace Sonar
+namespace Jeffery
 {
     Collision::Collision() {}
     Collision::~Collision() {};

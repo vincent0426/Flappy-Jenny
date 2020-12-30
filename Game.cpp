@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
-namespace Sonar
+namespace Jeffery
 {
     Game::Game(int width, int height, std::string title)
     {

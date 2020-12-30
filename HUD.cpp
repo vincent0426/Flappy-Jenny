@@ -1,7 +1,7 @@
 #include "HUD.hpp"
 #include <string>
 
-namespace Sonar
+namespace Jeffery
 {
     HUD::HUD(GameDataRef data) : _data(data)
     {

@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace Sonar
+namespace Jeffery
 {
     MainMenuState::MainMenuState(GameDataRef data) : _data(data) {}
     

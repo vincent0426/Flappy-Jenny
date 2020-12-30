@@ -6,7 +6,7 @@
 #include "DEFINITIONS.hpp"
 
 
-namespace Sonar {
+namespace Jeffery {
     class Ball{
     public:
         Ball(GameDataRef data);
