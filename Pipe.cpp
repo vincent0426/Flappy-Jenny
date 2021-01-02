@@ -98,10 +98,8 @@ namespace APlusPlus
                     scoringPipes.at(i).move(-movement, 0);
                 }
             }
-                scoringPipes.at(i).move(-movement, 0);
-            }
         }
-    
+    }
     
     void Pipe::DrawPipes()
     {
