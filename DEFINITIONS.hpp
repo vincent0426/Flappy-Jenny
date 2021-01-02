@@ -18,10 +18,10 @@
 
 #define LAND_FILEPATH "Resources/res/land.png"
 
-#define BIRD_FRAME_1_FILEPATH "Resources/res/bird-01.png"
-#define BIRD_FRAME_2_FILEPATH "Resources/res/bird-01.png"
-#define BIRD_FRAME_3_FILEPATH "Resources/res/bird-01.png"
-#define BIRD_FRAME_4_FILEPATH "Resources/res/bird-01.png"
+#define BIRD_FRAME_1_FILEPATH "Resources/res/turtle.png"
+#define BIRD_FRAME_2_FILEPATH "Resources/res/turtle.png"
+#define BIRD_FRAME_3_FILEPATH "Resources/res/turtle.png"
+#define BIRD_FRAME_4_FILEPATH "Resources/res/turtle.png"
 
 #define SCORING_PIPE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
 
@@ -80,7 +80,7 @@ enum GameStates
 #define GOLD_MEDAL_SCORE 10
 #define PLATINUM_MEDAL_SCORE 15
 
-#define BALL_FILEPATH "Resources/res/coin.png"
+#define BALL_FILEPATH "Resources/res/Pokeball.png"
 #define STAR_FILEPATH "Resources/res/InvincibleStar.png"
 
 

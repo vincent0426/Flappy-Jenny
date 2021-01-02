@@ -54,9 +54,10 @@ namespace APlusPlus
         {
             _birdSprite.move(0, GRAVITY * dt);
             
-            _rotation += ROTATION_SPEED * dt;
+            //_rotation += ROTATION_SPEED * dt;
             
             if(_rotation > 25.0f) _rotation = 25.0f;
+            _rotation = 0;
         }
         else if(_birdState == BIRD_STATE_FLYING)
         {
@@ -66,6 +67,7 @@ namespace APlusPlus
 //
 //            if(_rotation < -25.0f) _rotation = -25.0f;
             _rotation = -25.0f;
+            _rotation = 0;
         }
         
         if(_movementClock.getElapsedTime().asSeconds() > FLYING_DURATION)
