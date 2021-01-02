@@ -224,6 +224,7 @@ namespace APlusPlus
                         hud -> UpdateScore(_score);
                         pipe-> UpdateScore(_score);
                         ball-> UpdateScore(_score);
+                        _pointSound.play();
                         break;
                     }
                     

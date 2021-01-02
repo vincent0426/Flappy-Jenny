@@ -49,10 +49,6 @@ namespace APlusPlus
             }
             else
             {
-                //sf::Vector2f position = pipeSprites.at(i).getPosition();
-                /*if(totalclock.getElapsedTime().asSeconds() >= 10)
-                    movement = FAST_PIPE_MOVEMENT_SPEED * dt;
-                else movement = PIPE_MOVEMENT_SPEED * dt;*/
                 movement = Pipe::UpdateSpeed(_nowScore) * dt;
                 if(_nowScore >= 20)
                 {
@@ -131,7 +127,7 @@ namespace APlusPlus
     int Pipe::UpdateSpeed(int _nowScore) const
     {
         float PIPEMOVEMENT = PIPE_MOVEMENT_SPEED;
-        if( FIRST_THRESHOLD <= _nowScore && _nowScore < SECOND_THRESHOLD ) 
+        if( FIRST_THRESHOLD <= _nowScore && _nowScore < SECOND_THRESHOLD )
         {
             PIPEMOVEMENT += 100;
         }
