@@ -5,23 +5,23 @@
 
 #define SPLASH_STATE_SHOW_TIME 0  // 開啟畫面會出現多久
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
-#define GAME_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "/Users/huangziyong/Desktop/A++/A+++/A+++/Resources/res/11.png"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/Back-Ground.png"
+#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/res/Back-Ground.png"
+#define GAME_BACKGROUND_FILEPATH "Resources/res/Back-Ground.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "Resources/res/Back-Ground.png"
 
 #define GAME_TITLE_FILEPATH "Resources/res/Title.png"
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
 
-#define PIPE_UP_FILEPATH "/Users/huangziyong/Downloads/26r70003p5543oq2q016.png"
-#define PIPE_DOWN_FILEPATH "/Users/huangziyong/Downloads/pipeDown.png"
+#define PIPE_UP_FILEPATH "Resources/res/PIPEUP.png"
+#define PIPE_DOWN_FILEPATH "Resources/res/PIPEDOWN.png"
 
 #define LAND_FILEPATH "Resources/res/land.png"
 
-#define BIRD_FRAME_1_FILEPATH "/Users/huangziyong/Downloads/111.png"
-#define BIRD_FRAME_2_FILEPATH "/Users/huangziyong/Downloads/111.png"
-#define BIRD_FRAME_3_FILEPATH "/Users/huangziyong/Downloads/111.png"
-#define BIRD_FRAME_4_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define BIRD_FRAME_1_FILEPATH "Resources/res/bird-01.png"
+#define BIRD_FRAME_2_FILEPATH "Resources/res/bird-01.png"
+#define BIRD_FRAME_3_FILEPATH "Resources/res/bird-01.png"
+#define BIRD_FRAME_4_FILEPATH "Resources/res/bird-01.png"
 
 #define SCORING_PIPE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
 
@@ -80,8 +80,9 @@ enum GameStates
 #define GOLD_MEDAL_SCORE 10
 #define PLATINUM_MEDAL_SCORE 15
 
-#define BALL_FILEPATH "/Users/huangziyong/Downloads/111.png"
-#define STAR_FILEPATH "/Users/huangziyong/Downloads/111.png"
+#define BALL_FILEPATH "Resources/res/turtle.png"
+#define STAR_FILEPATH "Resources/res/turtle.png"
+
 
 #define AFTER_PIPE 0.3f
 #define BALL_FREQUENCY 123
