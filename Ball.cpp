@@ -39,7 +39,7 @@ namespace APlusPlus{
     }
 
     void Ball::RandomiseBallOffset(){
-        _ballSpawnYOffset = rand() % _landHeight;
+        _ballSpawnYOffset = rand() % _data->window.getSize().y;
     }
 
     const std::vector<sf::Sprite>& Ball::GetSprites() const

@@ -10,7 +10,7 @@ namespace APlusPlus{
     void Star::SpawnStar()
     {
         sf::Sprite sprite(this->_data->assets.GetTexture("Star"));
-        sprite.setPosition(this->_data->window.getSize().x, _starSpawnYOffset+50);
+        sprite.setPosition(this->_data->window.getSize().x, _starSpawnYOffset);
         starSprites.push_back(sprite);
     }
 
@@ -38,7 +38,7 @@ namespace APlusPlus{
     }
 
     void Star::RandomiseStarOffset(){
-        _starSpawnYOffset = rand() % _landHeight;
+        _starSpawnYOffset = rand() % _data->window.Window::getSize().y;
     }
 
     const std::vector<sf::Sprite>& Star::GetSprites() const

@@ -55,6 +55,8 @@ namespace APlusPlus
         
         _score = 0;
         starTime = -0.3;
+        random = 1;
+        FlashControl = 1;
         addBall = false;
         addStar = false;
         hud->UpdateScore(_score);
@@ -117,6 +119,7 @@ namespace APlusPlus
             if(_gameState == GameStates::ePlaying)
             {
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
+                FlashControl++;
                 starTime -= dt;
                 star -> UpdateScore(_score);
                 ball -> UpdateScore(_score);
@@ -166,13 +169,14 @@ namespace APlusPlus
                 }
                 else if(!nowPause && clock.getElapsedTime().asSeconds() + 0.3 > FREQUENCY)
                 {
-                    if(addBall){
+                    if(addBall && FlashControl % 20 == 1){
                         ball->RandomiseBallOffset();
                         ball->SpawnBall();
                         addBall = false;
                     }
                     
-                    if(addStar){
+                    if(addStar && FlashControl % 40 == 0){
+                        FlashControl = 1;
                         star -> RandomiseStarOffset();
                         star -> SpawnStar();
                         addStar = false;
@@ -276,14 +280,21 @@ namespace APlusPlus
         
         this->pipe->DrawPipes();
         this -> star-> DrawStar();
-        this->land->DrawLand();
-        this->bird->Draw();
+        if(starTime <= 0){
+            this -> bird -> Draw();
+        }
+        else{
+            if(FlashControl % 5 == 0) this -> bird -> Draw();
+        }
         this -> ball -> DrawBall();
         
         this->flash->Draw();
         
         this->hud->Draw();
         
+        this->land->DrawLand();
+        
         this->_data->window.display();
+        
     }
 }

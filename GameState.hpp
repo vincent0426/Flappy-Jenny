@@ -58,6 +58,8 @@ namespace APlusPlus
         bool addBall;
         bool addStar;
         float starTime;
+        int random;
+        int FlashControl;
         
     };
 }
