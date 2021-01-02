@@ -167,15 +167,15 @@ namespace APlusPlus
                     addStar = true;
                     clock.restart();
                 }
-                else if(!nowPause && clock.getElapsedTime().asSeconds() + 0.3 > FREQUENCY)
+                else if(!nowPause && clock.getElapsedTime().asSeconds() + AFTER_PIPE > FREQUENCY)
                 {
-                    if(addBall && FlashControl % 20 == 1){
+                    if(addBall && FlashControl % BALL_FREQUENCY == 0){
                         ball->RandomiseBallOffset();
                         ball->SpawnBall();
                         addBall = false;
                     }
                     
-                    if(addStar && FlashControl % 40 == 0){
+                    if(addStar && FlashControl % STAR_FREQUENCY == 0){
                         FlashControl = 1;
                         star -> RandomiseStarOffset();
                         star -> SpawnStar();
@@ -235,7 +235,7 @@ namespace APlusPlus
                 {
                     if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, bird ->GetSprite(), DETECTION_SCALE))
                     {
-                        starTime = dt * 600;
+                        starTime = dt * STAR_FREQUENCY;
                         star -> starErase(i);
                         break;
                     }

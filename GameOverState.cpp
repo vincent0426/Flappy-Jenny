@@ -50,7 +50,7 @@ namespace APlusPlus
         this->_data->assets.LoadTexture("Bronze Medal", BRONZE_MEDAL_FILEPATH);
         this->_data->assets.LoadTexture("Silver Medal", SILVER_MEDAL_FILEPATH);
         this->_data->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
-        this->_data->assets.LoadTexture("Platinum Medal", PLAY_BUTTON_FILEPATH);
+        this->_data->assets.LoadTexture("Platinum Medal", GOLD_MEDAL_FILEPATH);
         
         // applying textures
         this->_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));

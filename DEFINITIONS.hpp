@@ -82,3 +82,8 @@ enum GameStates
 
 #define BALL_FILEPATH "/Users/huangziyong/Downloads/111.png"
 #define STAR_FILEPATH "/Users/huangziyong/Downloads/111.png"
+
+#define AFTER_PIPE 0.3f
+#define BALL_FREQUENCY 123
+#define STAR_FREQUENCY 249
+#define STAR_TIME 400
