@@ -118,6 +118,7 @@ namespace APlusPlus
             }
             if(_gameState == GameStates::ePlaying)
             {
+                std::vector<sf::Sprite> pipeSprite = pipe->GetSprites();
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
                 FlashControl++;
                 starTime -= dt;
@@ -173,6 +174,13 @@ namespace APlusPlus
                         ball->RandomiseBallOffset();
                         ball->SpawnBall();
                         addBall = false;
+                        for(int i = 0;  i < pipeSprite.size(); i++){
+                            if(collision.CheckSpriteCollision(pipeSprite.at(i), ball->GetSprites().back())){
+                                int j = ball->GetSprites().size();
+                                ball->ballErase(j-1);
+                                addBall = true;
+                            }
+                        }
                     }
                     
                     if(addStar && FlashControl % STAR_FREQUENCY == 0){
@@ -200,7 +208,6 @@ namespace APlusPlus
                 if(starTime <= 0)
                 {
                     // for pipe collision detection
-                    std::vector<sf::Sprite> pipeSprite = pipe->GetSprites();
                     
                     for(int i = 0; i < pipeSprite.size(); i++)
                     {
@@ -242,6 +249,7 @@ namespace APlusPlus
                     }
                     
                 }
+                
                 
                 if(_gameState == GameStates::ePlaying)
                 {

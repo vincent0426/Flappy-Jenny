@@ -84,7 +84,7 @@ enum GameStates
 #define STAR_FILEPATH "Resources/res/InvincibleStar.png"
 
 
-#define AFTER_PIPE 0.3f
-#define BALL_FREQUENCY 123
-#define STAR_FREQUENCY 249
+#define AFTER_PIPE 0.2f
+#define BALL_FREQUENCY 57
+#define STAR_FREQUENCY 153
 #define STAR_TIME 400

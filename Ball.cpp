@@ -1,6 +1,6 @@
 
 #include "Ball.hpp"
-#include <iostream>
+
 
 namespace APlusPlus{
     Ball::Ball(GameDataRef data): _data(data){
@@ -39,7 +39,8 @@ namespace APlusPlus{
     }
 
     void Ball::RandomiseBallOffset(){
-        _ballSpawnYOffset = rand() % _data->window.getSize().y;
+        int up = 600 , low = 100;
+        _ballSpawnYOffset = rand() % (up - low + 1) + low;
     }
 
     const std::vector<sf::Sprite>& Ball::GetSprites() const

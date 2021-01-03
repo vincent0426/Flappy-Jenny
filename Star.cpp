@@ -1,5 +1,5 @@
 #include "Star.hpp"
-
+#include <iostream>
 
 namespace APlusPlus{
     Star::Star(GameDataRef data): _data(data){
@@ -38,7 +38,9 @@ namespace APlusPlus{
     }
 
     void Star::RandomiseStarOffset(){
-        _starSpawnYOffset = rand() % _data->window.Window::getSize().y;
+        int up = 600 , low = 100;
+        _starSpawnYOffset = rand() % (up - low + 1) + low;
+        std::cout << _starSpawnYOffset << std::endl;
     }
 
     const std::vector<sf::Sprite>& Star::GetSprites() const
