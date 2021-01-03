@@ -211,7 +211,7 @@ namespace APlusPlus
                     
                     for(int i = 0; i < pipeSprite.size(); i++)
                     {
-                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, bird->GetSprite(), DETECTION_SCALE))
                         {
                             _gameState = GameStates::eGameOver;
                             
