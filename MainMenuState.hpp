@@ -23,5 +23,6 @@ namespace APlusPlus
         sf::Sprite _background;
         sf::Sprite _title;
         sf::Sprite _playButton;
+        sf::Sprite _jenny;
     };
 }
