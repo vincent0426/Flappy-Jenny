@@ -85,6 +85,6 @@ enum GameStates
 
 
 #define AFTER_PIPE 0.2f
-#define BALL_FREQUENCY 57
-#define STAR_FREQUENCY 153
+#define BALL_FREQUENCY 243
+#define STAR_FREQUENCY 542
 #define STAR_TIME 400

@@ -168,7 +168,7 @@ namespace APlusPlus
                     addStar = true;
                     clock.restart();
                 }
-                else if(!nowPause && clock.getElapsedTime().asSeconds() + AFTER_PIPE > FREQUENCY)
+                else if(!nowPause)
                 {
                     if(addBall && FlashControl % BALL_FREQUENCY == 0){
                         ball->RandomiseBallOffset();
@@ -188,6 +188,14 @@ namespace APlusPlus
                         star -> RandomiseStarOffset();
                         star -> SpawnStar();
                         addStar = false;
+                        for(int i = 0; i < pipeSprite.size(); i++){
+                            if(collision.CheckSpriteCollision(pipeSprite.at(i), star-> GetSprites().back())){
+                                int j = star->GetSprites().size();
+                                star -> starErase(j-1);
+                                addStar = true;
+                            }
+                        }
+
                     }
                     
                 }
