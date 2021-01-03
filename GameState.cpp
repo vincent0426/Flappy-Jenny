@@ -136,9 +136,21 @@ namespace APlusPlus
                 {
                     FREQUENCY = 0.8f;
                 }
-                else if( THIRD_THRESHOLD <= _score )
+                else if( THIRD_THRESHOLD <= _score && _score < FORTH_THRESHOLD )
                 {
                     FREQUENCY = 0.6f;
+                }
+                else if( FORTH_THRESHOLD <= _score && _score < FIFTH_THRESHOLD )
+                {
+                    FREQUENCY = 0.4f;
+                }
+                else if( FIFTH_THRESHOLD <= _score && _score < SIXTH_THRESHOLD )
+                {
+                    FREQUENCY = 0.35f;
+                }
+                else if( SIXTH_THRESHOLD <= _score)
+                {
+                    FREQUENCY = 0.25f;
                 }
                 if(nowPause)
                 {

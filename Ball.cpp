@@ -64,9 +64,21 @@ namespace APlusPlus{
         {
             PIPEMOVEMENT += 200;
         }
-        else if(THIRD_THRESHOLD <= _nowScore )
+        else if(THIRD_THRESHOLD <= _nowScore && _nowScore < FORTH_THRESHOLD )
         {
             PIPEMOVEMENT += 300;
+        }
+        else if(FORTH_THRESHOLD <= _nowScore && _nowScore < FIFTH_THRESHOLD )
+        {
+            PIPEMOVEMENT += 500;
+        }
+        else if(FIFTH_THRESHOLD <= _nowScore && _nowScore < SIXTH_THRESHOLD )
+        {
+            PIPEMOVEMENT += 700;
+        }
+        else if(SIXTH_THRESHOLD <= _nowScore )
+        {
+            PIPEMOVEMENT += 900;
         }
         return PIPEMOVEMENT;
     }
