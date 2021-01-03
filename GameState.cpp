@@ -26,6 +26,16 @@ namespace APlusPlus
             std::cout << "Error Loading Point Sound Effect" << std::endl;
         }
         
+        if(!_eatStarSoundBuffer.loadFromFile(EAT_STAR_SOUND_FILEPATH))
+        {
+            std::cout << "Error Loading Hit Sound Effect" << std::endl;
+        }
+        if(!_dieSoundBuffer.loadFromFile(DIE_SOUND_FILEPATH)){
+            
+        }
+        
+        _dieSound.setBuffer(_dieSoundBuffer);
+        _eatStar.setBuffer(_eatStarSoundBuffer);
         _hitSound.setBuffer(_hitSoundBuffer);
         _wingSound.setBuffer(_wingSoundBuffer);
         _pointSound.setBuffer(_pointSoundBuffer);
@@ -84,9 +94,7 @@ namespace APlusPlus
                 {
                     _gameState = GameStates::ePause;
                     tempclock = sf::seconds(clock.getElapsedTime().asSeconds());
-                    //std::cout << tempclock.asSeconds() << std::endl;
                     nowPause = true;
-                    //std::cout << "SPACE" << std::endl;
                 }
             }
             else if(this->_data->input.IsSpriteClicked(this->_background
@@ -223,6 +231,7 @@ namespace APlusPlus
                         _gameState = GameStates::eGameOver;
                         
                         _hitSound.play();
+                        _dieSound.play();
                     }
                 }
                 if(starTime <= 0)
@@ -236,6 +245,7 @@ namespace APlusPlus
                             _gameState = GameStates::eGameOver;
                             
                             _hitSound.play();
+                            _dieSound.play();
                         }
                     }
                 }
@@ -265,6 +275,7 @@ namespace APlusPlus
                     {
                         starTime = dt * STAR_FREQUENCY;
                         star -> starErase(i);
+                        _eatStar.play();
                         break;
                     }
                     

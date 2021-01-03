@@ -10,14 +10,14 @@
 #define GAME_BACKGROUND_FILEPATH "Resources/res/Back.psd"
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources/res/Back.psd"
 
-#define GAME_TITLE_FILEPATH "Resources/res/Title.png"
+#define GAME_TITLE_FILEPATH "Resources/res/tittle2.png"
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
 #define JENNY_FILEPATH "Resources/res/Jenny.png"
 
 #define PIPE_UP_FILEPATH "Resources/res/PIPEUP.png"
 #define PIPE_DOWN_FILEPATH "Resources/res/PIPEDOWN.png"
 
-#define LAND_FILEPATH "Resources/res/land.png"
+#define LAND_FILEPATH "Resources/res/land.jpg"
 
 #define BIRD_FRAME_1_FILEPATH "Resources/res/turtle.png"
 #define BIRD_FRAME_2_FILEPATH "Resources/res/turtle.png"
@@ -38,7 +38,9 @@
 
 #define HIT_SOUND_FILEPATH "Resources/audio/Hit.wav"
 #define POINT_SOUND_FILEPATH "Resources/audio/Point.wav"
-#define WING_SOUND_FILEPATH "Resources/audio/Wing.wav"
+#define WING_SOUND_FILEPATH "Resources/audio/jump2.wav"
+#define EAT_STAR_SOUND_FILEPATH "Resources/audio/eatStar.wav"
+#define DIE_SOUND_FILEPATH "Resources/audio/die.wav"
 
 #define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FREQUENCY 1.5f
