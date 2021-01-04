@@ -38,9 +38,12 @@
 
 #define HIT_SOUND_FILEPATH "Resources/audio/Hit.wav"
 #define POINT_SOUND_FILEPATH "Resources/audio/Point.wav"
-#define WING_SOUND_FILEPATH "Resources/audio/jump2.wav"
+#define WING_SOUND_FILEPATH "Resources/audio/jump1.wav"
 #define EAT_STAR_SOUND_FILEPATH "Resources/audio/eatStar.wav"
 #define DIE_SOUND_FILEPATH "Resources/audio/die.wav"
+#define COIN_SOUND_FILEPATH "Resources/audio/coin.wav"
+#define BACKGROUND_SOUND_FILEPATH "Resources/audio/background3.wav"
+#define GAME_SOUND_FILEPATH ""
 
 #define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FREQUENCY 1.5f

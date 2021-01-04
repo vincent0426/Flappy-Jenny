@@ -33,12 +33,20 @@ namespace APlusPlus
         if(!_dieSoundBuffer.loadFromFile(DIE_SOUND_FILEPATH)){
             
         }
+        if(!_coinSoundBuffer.loadFromFile(COIN_SOUND_FILEPATH)){
+            
+        }
+        if(!_backgroundSoundBuffer.loadFromFile(BACKGROUND_SOUND_FILEPATH)){
+            
+        }
         
+        _coinSound.setBuffer(_coinSoundBuffer);
         _dieSound.setBuffer(_dieSoundBuffer);
         _eatStar.setBuffer(_eatStarSoundBuffer);
         _hitSound.setBuffer(_hitSoundBuffer);
         _wingSound.setBuffer(_wingSoundBuffer);
         _pointSound.setBuffer(_pointSoundBuffer);
+        _backgroundSound.setBuffer(_backgroundSoundBuffer);
         
         this->_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
         this->_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
@@ -75,6 +83,7 @@ namespace APlusPlus
         star -> UpdateScore(_score);
         
         _gameState = GameStates::eReady;
+        _backgroundSound.play();
     }
     
     void GameState::HandleInput()
@@ -229,7 +238,7 @@ namespace APlusPlus
                     if(collision.CheckSpriteCollision(landSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
                     {
                         _gameState = GameStates::eGameOver;
-                        
+                        _backgroundSound.stop();
                         _hitSound.play();
                         _dieSound.play();
                     }
@@ -243,7 +252,7 @@ namespace APlusPlus
                         if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, bird->GetSprite(), DETECTION_SCALE))
                         {
                             _gameState = GameStates::eGameOver;
-                            
+                            _backgroundSound.stop();
                             _hitSound.play();
                             _dieSound.play();
                         }
@@ -261,7 +270,7 @@ namespace APlusPlus
                         hud -> UpdateScore(_score);
                         pipe-> UpdateScore(_score);
                         ball-> UpdateScore(_score);
-                        _pointSound.play();
+                        _coinSound.play();
                         break;
                     }
                     

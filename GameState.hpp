@@ -50,12 +50,16 @@ namespace APlusPlus
         sf::SoundBuffer _pointSoundBuffer;
         sf::SoundBuffer _eatStarSoundBuffer;
         sf::SoundBuffer _dieSoundBuffer;
+        sf::SoundBuffer _coinSoundBuffer;
+        sf::SoundBuffer _backgroundSoundBuffer;
         
         sf::Sound _hitSound;
         sf::Sound _wingSound;
         sf::Sound _pointSound;
         sf::Sound _eatStar;
         sf::Sound _dieSound;
+        sf:: Sound _coinSound;
+        sf:: Sound _backgroundSound;
         
         float FREQUENCY;
         bool nowPause;

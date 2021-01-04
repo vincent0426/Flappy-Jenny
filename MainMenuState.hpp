@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
 
@@ -24,5 +25,8 @@ namespace APlusPlus
         sf::Sprite _title;
         sf::Sprite _playButton;
         sf::Sprite _jenny;
+        
+        sf::SoundBuffer _backgroundSoundBuffer;
+        sf::Sound _backgroundSound;
     };
 }

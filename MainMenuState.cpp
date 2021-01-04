@@ -16,6 +16,9 @@ namespace APlusPlus
         this->_data->assets.LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
         this->_data->assets.LoadTexture("Jenny", JENNY_FILEPATH);
         
+        _backgroundSoundBuffer.loadFromFile(BACKGROUND_SOUND_FILEPATH);
+        _backgroundSound.setBuffer(_backgroundSoundBuffer);
+        
         _background.setTexture(this->_data->assets.GetTexture("Main Menu Background"));
         _title.setTexture(this->_data->assets.GetTexture("Game Title"));
         _playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
@@ -24,6 +27,9 @@ namespace APlusPlus
         _title.setPosition((SCREEN_WIDTH / 2) - (_title.getGlobalBounds().width / 2), _title.getGlobalBounds().height / 2);
         _playButton.setPosition((SCREEN_WIDTH / 2) - (_playButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - _playButton.getGlobalBounds().height / 2);
         _jenny.setPosition((SCREEN_WIDTH / 2) - (_playButton.getGlobalBounds().width / 2) - 250, (SCREEN_HEIGHT / 2) - _playButton.getGlobalBounds().height / 2 + 75);
+        
+        _backgroundSound.play();
+        
     }
     
     void MainMenuState::HandleInput()
@@ -41,6 +47,7 @@ namespace APlusPlus
             {
                 // Switch To Game State
                 this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+                _backgroundSound.stop();
             }
         }
     }
