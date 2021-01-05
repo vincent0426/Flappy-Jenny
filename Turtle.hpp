@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "DEFINITIONS.hpp"
+#include "CONST_VARIABLE.h"
 #include "Game.hpp"
 
 #include <vector>

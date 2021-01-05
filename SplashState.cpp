@@ -1,6 +1,6 @@
 #include <sstream>
 #include "SplashState.hpp"
-#include "DEFINITIONS.hpp"
+#include "CONST_VARIABLE.h"
 #include "MainMenuState.hpp"
 
 #include <iostream>

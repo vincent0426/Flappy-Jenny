@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Game.hpp"
-#include "DEFINITIONS.hpp"
+#include "CONST_VARIABLE.h"
 
 namespace APlusPlus
 {

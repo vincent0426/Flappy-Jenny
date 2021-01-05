@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Game.hpp"
-#include "DEFINITIONS.hpp"
+#include "CONST_VARIABLE.h"
 
 
 

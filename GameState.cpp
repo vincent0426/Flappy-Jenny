@@ -1,5 +1,5 @@
 #include <sstream>
-#include "DEFINITIONS.hpp"
+#include "CONST_VARIABLE.h"
 #include "GameState.hpp"
 #include "GameOverState.hpp"
 
