@@ -14,17 +14,15 @@
 #define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png"
 #define JENNY_FILEPATH "Resources/res/Jenny.png"
 
-#define PIPE_UP_FILEPATH "Resources/res/PIPEUP.png"
-#define PIPE_DOWN_FILEPATH "Resources/res/PIPEDOWN.png"
+#define TREE_UP_FILEPATH "Resources/res/PIPEUP.png"
+#define TREE_DOWN_FILEPATH "Resources/res/PIPEDOWN.png"
 
 #define LAND_FILEPATH "Resources/res/land.jpg"
 
-#define BIRD_FRAME_1_FILEPATH "Resources/res/turtle.png"
-#define BIRD_FRAME_2_FILEPATH "Resources/res/turtle.png"
-#define BIRD_FRAME_3_FILEPATH "Resources/res/turtle.png"
-#define BIRD_FRAME_4_FILEPATH "Resources/res/turtle.png"
+#define TURTLE_FRAME_1_FILEPATH "Resources/res/turtle.png"
 
-#define SCORING_PIPE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
+
+#define SCORING_TURTLE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
 
 #define FLAPPY_FONT_FILEPATH "Resources/fonts/Marker Felt.ttf"
 

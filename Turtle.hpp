@@ -9,11 +9,11 @@
 
 namespace APlusPlus
 {
-    class Bird
+    class Turtle
     {
     public:
-        Bird(GameDataRef data);
-        ~Bird();
+        Turtle(GameDataRef data);
+        ~Turtle();
         
         void Draw();
         
@@ -26,7 +26,7 @@ namespace APlusPlus
     private:
         GameDataRef _data;
         
-        sf::Sprite _birdSprite;
+        sf::Sprite _turtleSprite;
         std::vector<sf::Texture> _animationFrames;
         
         unsigned int _animationIterator;
@@ -34,7 +34,7 @@ namespace APlusPlus
         sf::Clock _clock;
         sf::Clock _movementClock;
         
-        int _birdState;
+        int _turtleState;
         float _rotation;
         
     };

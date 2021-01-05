@@ -4,14 +4,14 @@
 #include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
-#include "Pipe.hpp"
 #include "Land.hpp"
-#include "Bird.hpp"
 #include "Collision.hpp"
 #include "Flash.hpp"
 #include "HUD.hpp"
 #include "Ball.hpp"
 #include "Star.hpp"
+#include "Tree.hpp"
+#include "Turtle.hpp"
 
 namespace APlusPlus
 {
@@ -30,9 +30,9 @@ namespace APlusPlus
         GameDataRef _data;
         sf::Sprite _background;
         
-        Pipe* pipe;
+        Tree* tree;
         Land* land;
-        Bird* bird;
+        Turtle* turtle;
         Collision collision;
         Flash* flash;
         HUD* hud;

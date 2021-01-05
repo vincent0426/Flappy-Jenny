@@ -49,21 +49,18 @@ namespace APlusPlus
         _backgroundSound.setBuffer(_backgroundSoundBuffer);
         
         this->_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
-        this->_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
-        this->_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+        this->_data->assets.LoadTexture("Tree Up", TREE_UP_FILEPATH);
+        this->_data->assets.LoadTexture("Tree Down", TREE_DOWN_FILEPATH);
         this->_data->assets.LoadTexture("Land", LAND_FILEPATH);
-        this->_data->assets.LoadTexture("Bird Frame 1", BIRD_FRAME_1_FILEPATH);
-        this->_data->assets.LoadTexture("Bird Frame 2", BIRD_FRAME_2_FILEPATH);
-        this->_data->assets.LoadTexture("Bird Frame 3", BIRD_FRAME_3_FILEPATH);
-        this->_data->assets.LoadTexture("Bird Frame 4", BIRD_FRAME_4_FILEPATH);
-        this->_data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);
+        this->_data->assets.LoadTexture("Turtle Frame 1", TURTLE_FRAME_1_FILEPATH);
+        this->_data->assets.LoadTexture("Scoring Tree", SCORING_TURTLE_FILEPATH);
         this->_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
         this -> _data-> assets.LoadTexture("Ball", BALL_FILEPATH);
         this-> _data -> assets.LoadTexture("Star", STAR_FILEPATH);
         
-        pipe = new Pipe(_data);
+        tree = new Tree(_data);
         land = new Land(_data);
-        bird = new Bird(_data);
+        turtle = new Turtle(_data);
         flash = new Flash(_data);
         hud = new HUD(_data);
         ball = new Ball(_data);
@@ -78,7 +75,7 @@ namespace APlusPlus
         addBall = false;
         addStar = false;
         hud->UpdateScore(_score);
-        pipe -> UpdateScore(_score);
+        tree -> UpdateScore(_score);
         ball -> UpdateScore(_score);
         star -> UpdateScore(_score);
         
@@ -116,7 +113,7 @@ namespace APlusPlus
                 if(_gameState != GameStates::eGameOver)
                 {
                     _gameState = GameStates::ePlaying;
-                    bird->Tap();
+                    turtle->Tap();
                     
                     _wingSound.play();
                 }
@@ -130,18 +127,18 @@ namespace APlusPlus
         {
             if(_gameState != GameStates::eGameOver)
             {
-                bird->Animate(dt);
+                turtle->Animate(dt);
                 //land->MoveLand(dt);
             }
             if(_gameState == GameStates::ePlaying)
             {
-                std::vector<sf::Sprite> pipeSprite = pipe->GetSprites();
+                std::vector<sf::Sprite> pipeSprite = tree->GetSprites();
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
                 FlashControl++;
                 starTime -= dt;
                 star -> UpdateScore(_score);
                 ball -> UpdateScore(_score);
-                pipe->MovePipes(dt);
+                tree->MoveTrees(dt);
                 ball->MoveBall(dt);
                 star -> MoveStar(dt);
                 
@@ -175,24 +172,22 @@ namespace APlusPlus
                 }
                 if(nowPause && clock.getElapsedTime().asSeconds() > interval)
                 {
-                    //std::cout << "nowPause" << std::endl;
-                    //std::cout << tempclock.asSeconds() << std::endl;
-                    pipe->RandomisePipeOffset();
-                    pipe->SpawnInvisiblePipe();
-                    pipe->SpawnBottomPipe();
-                    pipe->SpawnTopPipe();
-                    pipe->SpawnScoringPipe();
+                    tree->RandomiseTreeOffset();
+                    tree->SpawnInvisibleTree();
+                    tree->SpawnBottomTree();
+                    tree->SpawnTopTree();
+                    tree->SpawnScoringTree();
                     
                     clock.restart();
                     nowPause = false;
                 }
                 else if(!nowPause && clock.getElapsedTime().asSeconds() > FREQUENCY)
                 {
-                    pipe->RandomisePipeOffset();
-                    pipe->SpawnInvisiblePipe();
-                    pipe->SpawnBottomPipe();
-                    pipe->SpawnTopPipe();
-                    pipe->SpawnScoringPipe();
+                    tree->RandomiseTreeOffset();
+                    tree->SpawnInvisibleTree();
+                    tree->SpawnBottomTree();
+                    tree->SpawnTopTree();
+                    tree->SpawnScoringTree();
                     addBall = true;
                     addStar = true;
                     clock.restart();
@@ -228,14 +223,14 @@ namespace APlusPlus
                     }
                     
                 }
-                bird->Update(dt);
+                turtle->Update(dt);
                 
                 // for land collision detection
                 std::vector<sf::Sprite> landSprite = land->GetSprites();
                 
                 for(int i = 0; i < landSprite.size(); i++)
                 {
-                    if(collision.CheckSpriteCollision(landSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                    if(collision.CheckSpriteCollision(landSprite.at(i), 1.0f, turtle->GetSprite(), DETECTION_SCALE))
                     {
                         _gameState = GameStates::eGameOver;
                         _backgroundSound.stop();
@@ -249,7 +244,7 @@ namespace APlusPlus
                     
                     for(int i = 0; i < pipeSprite.size(); i++)
                     {
-                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, bird->GetSprite(), DETECTION_SCALE))
+                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, turtle->GetSprite(), DETECTION_SCALE))
                         {
                             _gameState = GameStates::eGameOver;
                             _backgroundSound.stop();
@@ -263,12 +258,12 @@ namespace APlusPlus
                 std::vector<sf::Sprite> ballSprite = ball-> GetSprites();
                 for(int i = 0; i < ballSprite.size(); i++)
                 {
-                    if(collision.CheckSpriteCollision(ballSprite.at(i), 1.0f, bird->GetSprite(), DETECTION_SCALE))
+                    if(collision.CheckSpriteCollision(ballSprite.at(i), 1.0f, turtle->GetSprite(), DETECTION_SCALE))
                     {
                         _score++;
                         ball -> ballErase(i);
                         hud -> UpdateScore(_score);
-                        pipe-> UpdateScore(_score);
+                        tree -> UpdateScore(_score);
                         ball-> UpdateScore(_score);
                         _coinSound.play();
                         break;
@@ -280,7 +275,7 @@ namespace APlusPlus
                 std::vector<sf::Sprite> starSprite = star -> GetSprites();
                 for(int i = 0; i < starSprite.size(); i++)
                 {
-                    if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, bird ->GetSprite(), DETECTION_SCALE))
+                    if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, turtle ->GetSprite(), DETECTION_SCALE))
                     {
                         starTime = dt * STAR_FREQUENCY;
                         star -> starErase(i);
@@ -293,16 +288,16 @@ namespace APlusPlus
                 
                 if(_gameState == GameStates::ePlaying)
                 {
-                    std::vector<sf::Sprite>& scoringSprites = pipe->GetScoringSprites();
+                    std::vector<sf::Sprite>& scoringSprites = tree ->GetScoringSprites();
 
                     for(int i = 0; i < scoringSprites.size(); i++)
                     {
-                        if(collision.CheckSpriteCollision(bird->GetSprite(), DETECTION_SCALE, scoringSprites.at(i), 1.0f))
+                        if(collision.CheckSpriteCollision(turtle->GetSprite(), DETECTION_SCALE, scoringSprites.at(i), 1.0f))
                         {
                             _score++;
                             
                             hud -> UpdateScore(_score);
-                            pipe-> UpdateScore(_score);
+                            tree-> UpdateScore(_score);
                             ball-> UpdateScore(_score);
                             _pointSound.play();
 
@@ -328,13 +323,13 @@ namespace APlusPlus
         this->_data->window.clear(sf::Color::Red);
         this->_data->window.draw(this->_background);
         
-        this->pipe->DrawPipes();
+        this->tree->DrawTrees();
         this -> star-> DrawStar();
         if(starTime <= 0){
-            this -> bird -> Draw();
+            this -> turtle -> Draw();
         }
         else{
-            if(FlashControl % 5 == 0) this -> bird -> Draw();
+            if(FlashControl % 5 == 0) this -> turtle -> Draw();
         }
         this -> ball -> DrawBall();
         
