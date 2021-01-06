@@ -330,6 +330,7 @@ namespace APlusPlus
         }
         else{
             if(FlashControl % 5 == 0) this -> turtle -> Draw();
+            if(_gameState == GameStates::ePause) this -> turtle -> Draw();
         }
         this -> ball -> DrawBall();
         

@@ -15,7 +15,7 @@ const string GAME_BACKGROUND_FILEPATH = "Resources/res/Back.psd";
 const string GAME_OVER_BACKGROUND_FILEPATH = "Resources/res/Back.psd";
 
 const string GAME_TITLE_FILEPATH = "Resources/res/tittle2.png";
-const string PLAY_BUTTON_FILEPATH = "Resources/res/PlayButton.png";
+const string PLAY_BUTTON_FILEPATH = "Resources/res/PlayButton3.png";
 const string JENNY_FILEPATH = "Resources/res/Jenny.png";
 
 const string TREE_UP_FILEPATH = "Resources/res/PIPEUP.png";
@@ -78,7 +78,7 @@ enum GameStates
     ePause
 };
 
-const double DETECTION_SCALE = 0.625;
+const double DETECTION_SCALE = 0.7;
 
 const double FLASH_SPEED = 1500.0;
 
