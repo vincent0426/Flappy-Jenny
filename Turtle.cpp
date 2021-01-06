@@ -55,7 +55,7 @@ namespace APlusPlus
         {
             _turtleSprite.move(0, GRAVITY * dt);
             
-            
+            _rotation += ROTATION_SPEED * dt;
             if(_rotation > 25.0f) _rotation = 25.0f;
             _rotation = 0;
         }

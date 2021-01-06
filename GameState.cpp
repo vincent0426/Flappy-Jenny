@@ -36,9 +36,9 @@ namespace APlusPlus
         if(!_coinSoundBuffer.loadFromFile(COIN_SOUND_FILEPATH)){
             
         }
-        if(!_backgroundSoundBuffer.loadFromFile(BACKGROUND_SOUND_FILEPATH)){
+        /*if(!_backgroundSoundBuffer.loadFromFile(BACKGROUND_SOUND_FILEPATH)){
             
-        }
+        }*/
         
         _coinSound.setBuffer(_coinSoundBuffer);
         _dieSound.setBuffer(_dieSoundBuffer);
@@ -46,7 +46,7 @@ namespace APlusPlus
         _hitSound.setBuffer(_hitSoundBuffer);
         _wingSound.setBuffer(_wingSoundBuffer);
         _pointSound.setBuffer(_pointSoundBuffer);
-        _backgroundSound.setBuffer(_backgroundSoundBuffer);
+        //_backgroundSound.setBuffer(_backgroundSoundBuffer);
         
         this->_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
         this->_data->assets.LoadTexture("Tree Up", TREE_UP_FILEPATH);
@@ -80,7 +80,7 @@ namespace APlusPlus
         star -> UpdateScore(_score);
         
         _gameState = GameStates::eReady;
-        _backgroundSound.play();
+        //_backgroundSound.play();
     }
     
     void GameState::HandleInput()
@@ -233,7 +233,7 @@ namespace APlusPlus
                     if(collision.CheckSpriteCollision(landSprite.at(i), 1.0f, turtle->GetSprite(), DETECTION_SCALE))
                     {
                         _gameState = GameStates::eGameOver;
-                        _backgroundSound.stop();
+                        //_backgroundSound.stop();
                         _hitSound.play();
                         _dieSound.play();
                     }
@@ -247,7 +247,7 @@ namespace APlusPlus
                         if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, turtle->GetSprite(), DETECTION_SCALE))
                         {
                             _gameState = GameStates::eGameOver;
-                            _backgroundSound.stop();
+                            //_backgroundSound.stop();
                             _hitSound.play();
                             _dieSound.play();
                         }
