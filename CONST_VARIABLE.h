@@ -57,11 +57,11 @@ const int FORTH_THRESHOLD = 30;
 const int FIFTH_THRESHOLD = 40;
 const int SIXTH_THRESHOLD = 50;
 
-const double BIRD_ANIMATION_DURATION = 0.4;
+const double TURTLE_ANIMATION_DURATION = 0.4;
 
-const int BIRD_STATE_STILL = 1;
-const int BIRD_STATE_FALLING = 2;
-const int BIRD_STATE_FLYING = 3;
+const int TURTLE_STATE_STILL = 1;
+const int TURTLE_STATE_FALLING = 2;
+const int TURTLE_STATE_FLYING = 3;
 
 const double GRAVITY = 350.0;
 const double FLYING_SPEED = 350.0;

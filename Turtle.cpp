@@ -16,7 +16,7 @@ namespace APlusPlus
         
         _turtleSprite.setPosition((_data->window.getSize().x / 4) - (_turtleSprite.getGlobalBounds().width / 2), (_data->window.getSize().y / 2) - (_turtleSprite.getGlobalBounds().height / 2));
         
-        _turtleState = BIRD_STATE_STILL;
+        _turtleState = TURTLE_STATE_STILL;
         
         sf::Vector2f origin = sf::Vector2f(_turtleSprite.getGlobalBounds().width / 2, _turtleSprite.getGlobalBounds().height / 2);
         _turtleSprite.setOrigin(origin);
@@ -32,7 +32,7 @@ namespace APlusPlus
     
     void Turtle::Animate(float dt)
     {
-        if(_clock.getElapsedTime().asSeconds() > BIRD_ANIMATION_DURATION / _animationFrames.size())
+        if(_clock.getElapsedTime().asSeconds() > TURTLE_ANIMATION_DURATION / _animationFrames.size())
         {
             if(_animationIterator < _animationFrames.size() - 1)
             {
@@ -51,25 +51,25 @@ namespace APlusPlus
     
     void Turtle::Update(float dt)
     {
-        if(_turtleState == BIRD_STATE_FALLING)
+        if(_turtleState == TURTLE_STATE_FALLING)
         {
             _turtleSprite.move(0, GRAVITY * dt);
             
-            _rotation += ROTATION_SPEED * dt;
-            if(_rotation > 25.0f) _rotation = 25.0f;
+            //_rotation += ROTATION_SPEED * dt;
+            //if(_rotation > 25.0f) _rotation = 25.0f;
             _rotation = 0;
         }
-        else if(_turtleState == BIRD_STATE_FLYING)
+        else if(_turtleState == TURTLE_STATE_FLYING)
         {
             _turtleSprite.move(0, -FLYING_SPEED * dt);
             
-            _rotation = -25.0f;
+            //_rotation = -25.0f;
             _rotation = 0;
         }
         
         if(_movementClock.getElapsedTime().asSeconds() > FLYING_DURATION)
         {
-            _turtleState = BIRD_STATE_FALLING;
+            _turtleState = TURTLE_STATE_FALLING;
             _movementClock.restart();
         }
         _turtleSprite.setRotation(_rotation);
@@ -77,7 +77,7 @@ namespace APlusPlus
     
     void Turtle::Tap()
     {
-        _turtleState = BIRD_STATE_FLYING;
+        _turtleState = TURTLE_STATE_FLYING;
 
         _movementClock.restart();
     }
