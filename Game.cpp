@@ -1,5 +1,5 @@
 #include "Game.hpp"
-#include "SplashState.hpp"
+#include "MainMenuState.hpp"
 
 #include <cstdlib>
 #include <ctime>
@@ -10,7 +10,7 @@ namespace APlusPlus
         srand(time(NULL) * clock());
         
         _data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
-        _data->machine.AddState(StateRef(new SplashState(this->_data)));
+        _data->machine.AddState(StateRef(new MainMenuState(_data)), true);
         
         this->Run();
     }
