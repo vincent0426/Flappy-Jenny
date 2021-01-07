@@ -125,11 +125,6 @@ namespace APlusPlus
     {
         if(_gameState != GameStates::ePause)
         {
-            if(_gameState != GameStates::eGameOver)
-            {
-                turtle->Animate(dt);
-                //land->MoveLand(dt);
-            }
             if(_gameState == GameStates::ePlaying)
             {
                 std::vector<sf::Sprite> pipeSprite = tree->GetSprites();

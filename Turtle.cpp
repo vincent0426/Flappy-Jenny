@@ -8,10 +8,7 @@ namespace APlusPlus
         _animationIterator = 0;
         
         _animationFrames.push_back(this->_data->assets.GetTexture("Turtle Frame 1"));
-        _animationFrames.push_back(this->_data->assets.GetTexture("Turtle Frame 1"));
-        _animationFrames.push_back(this->_data->assets.GetTexture("Turtle Frame 1"));
-        _animationFrames.push_back(this->_data->assets.GetTexture("Turtle Frame 1"));
-        
+
         _turtleSprite.setTexture(_animationFrames.at(_animationIterator));
         
         _turtleSprite.setPosition((_data->window.getSize().x / 4) - (_turtleSprite.getGlobalBounds().width / 2), (_data->window.getSize().y / 2) - (_turtleSprite.getGlobalBounds().height / 2));
@@ -30,40 +27,18 @@ namespace APlusPlus
         _data->window.draw(_turtleSprite);
     }
     
-    void Turtle::Animate(float dt)
-    {
-        if(_clock.getElapsedTime().asSeconds() > TURTLE_ANIMATION_DURATION / _animationFrames.size())
-        {
-            if(_animationIterator < _animationFrames.size() - 1)
-            {
-                _animationIterator++;
-            }
-            else
-            {
-                _animationIterator = 0;
-            }
-            
-            _turtleSprite.setTexture(_animationFrames.at(_animationIterator));
-            
-            this->_clock.restart();
-        }
-    }
-    
     void Turtle::Update(float dt)
     {
         if(_turtleState == TURTLE_STATE_FALLING)
         {
             _turtleSprite.move(0, GRAVITY * dt);
-            
-            //_rotation += ROTATION_SPEED * dt;
-            //if(_rotation > 25.0f) _rotation = 25.0f;
+
             _rotation = 0;
         }
         else if(_turtleState == TURTLE_STATE_FLYING)
         {
             _turtleSprite.move(0, -FLYING_SPEED * dt);
             
-            //_rotation = -25.0f;
             _rotation = 0;
         }
         
