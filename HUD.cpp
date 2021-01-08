@@ -23,5 +23,20 @@ namespace APlusPlus
     void HUD::UpdateScore(int score)
     {
         _scoreText.setString(std::to_string(score));
+        if(score == FIRST_THRESHOLD ){
+            _scoreText.setFillColor(sf::Color(250,235,215));
+        }
+        else if(score == SECOND_THRESHOLD){
+            _scoreText.setFillColor(sf::Color(255,127,80));
+        }
+        else if(score ==  THIRD_THRESHOLD){
+            _scoreText.setFillColor(sf::Color(8,46,84));
+        }
+        else if(score == FORTH_THRESHOLD){
+            _scoreText.setFillColor(sf::Color(189,252,201));
+        }
+        else if(score ==  FIFTH_THRESHOLD){
+            _scoreText.setFillColor(sf::Color(255,215,0));
+        }
     }
 }
