@@ -100,5 +100,5 @@ const string STAR_FILEPATH = "Resources/res/InvincibleStar.png";
 const double AFTER_PIPE = 0.2f;
 const int BALL_FREQUENCY = 243;
 const int STAR_FREQUENCY = 542;
-const double STAR_TIME = 400;
+const double STAR_TIME = 200;
 

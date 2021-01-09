@@ -275,7 +275,7 @@ namespace APlusPlus
                 {
                     if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, turtle ->GetSprite(), DETECTION_SCALE))
                     {
-                        starTime = dt * STAR_FREQUENCY;
+                        starTime = dt * STAR_TIME;
                         star -> starErase(i);
                         _eatStar.play();
                         break;
@@ -338,7 +338,7 @@ namespace APlusPlus
         
         this->land->DrawLand();
         
-        if(_gameState == GameStates::ePause) this -> _data -> window.draw(this->_click);
+        //if(_gameState == GameStates::ePause) this -> _data -> window.draw(this->_click);
         
         this->_data->window.display();
         
