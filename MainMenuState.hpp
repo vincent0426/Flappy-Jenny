@@ -25,6 +25,7 @@ namespace APlusPlus
         sf::Sprite _title;
         sf::Sprite _playButton;
         sf::Sprite _jenny;
+        sf:: Sprite _space;
         
         sf::SoundBuffer _backgroundSoundBuffer;
         sf::Sound _backgroundSound;

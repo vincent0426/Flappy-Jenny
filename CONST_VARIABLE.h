@@ -17,6 +17,8 @@ const string GAME_OVER_BACKGROUND_FILEPATH = "Resources/res/Back.psd";
 const string GAME_TITLE_FILEPATH = "Resources/res/tittle2.png";
 const string PLAY_BUTTON_FILEPATH = "Resources/res/PlayButton3.png";
 const string JENNY_FILEPATH = "Resources/res/Jenny.png";
+const string SPACE_FILEPATH = "Resources/res/space.png";
+const string CLICK_FILEPATH = "Resources/res/click.png";
 
 const string TREE_UP_FILEPATH = "Resources/res/PIPEUP.png";
 const string TREE_DOWN_FILEPATH = "Resources/res/PIPEDOWN.png";

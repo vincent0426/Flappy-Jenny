@@ -29,6 +29,7 @@ namespace APlusPlus
     private:
         GameDataRef _data;
         sf::Sprite _background;
+        sf::Sprite _click;
         
         Tree* tree;
         Land* land;

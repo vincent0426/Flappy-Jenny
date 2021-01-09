@@ -57,6 +57,7 @@ namespace APlusPlus
         this->_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
         this -> _data-> assets.LoadTexture("Ball", BALL_FILEPATH);
         this-> _data -> assets.LoadTexture("Star", STAR_FILEPATH);
+        this -> _data -> assets.LoadTexture("click", CLICK_FILEPATH);
         
         tree = new Tree(_data);
         land = new Land(_data);
@@ -67,6 +68,8 @@ namespace APlusPlus
         star = new Star(_data);
         
         _background.setTexture(this->_data->assets.GetTexture("Game Background"));
+        _click.setTexture(this ->  _data -> assets.GetTexture("click"));
+        _click.setPosition(SCREEN_WIDTH/2 - 350, SCREEN_HEIGHT/2);
         
         _score = 0;
         starTime = -0.3;
@@ -334,6 +337,8 @@ namespace APlusPlus
         this->hud->Draw();
         
         this->land->DrawLand();
+        
+        if(_gameState == GameStates::ePause) this -> _data -> window.draw(this->_click);
         
         this->_data->window.display();
         
