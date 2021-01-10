@@ -11,7 +11,6 @@ namespace APlusPlus
     public:
         Land(GameDataRef data);
         
-        void MoveLand(float dt);
         void DrawLand();
         const std::vector<sf::Sprite>& GetSprites() const;
         

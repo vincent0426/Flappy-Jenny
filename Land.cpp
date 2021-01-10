@@ -14,24 +14,7 @@ namespace APlusPlus
         _landSprites.push_back(sprite);
         _landSprites.push_back(sprite2);
     }
-    
-    void Land::MoveLand(float dt)
-    {
-        for(unsigned short int i = 0; i < _landSprites.size(); i++)
-        {
-            //sf::Vector2f position = _landSprites.at(i).getPosition();
-            float movement = PIPE_MOVEMENT_SPEED * dt;
-            
-            _landSprites.at(i).move(-movement, 0.0f);
-            
-            if(_landSprites.at(i).getPosition().x < 0 - _landSprites.at(i).getLocalBounds().width)
-            {
-                sf::Vector2f position(_data->window.getSize().x, _landSprites.at(i).getPosition().y);
-                _landSprites.at(i).setPosition(position);
-            }
-        }
-    }
-    
+        
     void Land::DrawLand()
     {
         for(unsigned short int i = 0; i < _landSprites.size(); i++)
