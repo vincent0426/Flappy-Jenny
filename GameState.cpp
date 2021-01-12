@@ -1,4 +1,3 @@
-#include <sstream>
 #include "CONST_VARIABLE.h"
 #include "GameState.hpp"
 #include "GameOverState.hpp"
@@ -130,7 +129,7 @@ namespace APlusPlus
         {
             if(_gameState == GameStates::ePlaying)
             {
-                std::vector<sf::Sprite> pipeSprite = tree->GetSprites();
+                std::vector<sf::Sprite> treeSprite = tree->GetSprites();
                 FREQUENCY = PIPE_SPAWN_FREQUENCY;
                 FlashControl++;
                 starTime -= dt;
@@ -196,8 +195,8 @@ namespace APlusPlus
                         ball->RandomiseBallOffset();
                         ball->SpawnBall();
                         addBall = false;
-                        for(int i = 0;  i < pipeSprite.size(); i++){
-                            if(collision.CheckSpriteCollision(pipeSprite.at(i), ball->GetSprites().back())){
+                        for(int i = 0;  i < treeSprite.size(); i++){
+                            if(collision.CheckSpriteCollision(treeSprite.at(i), ball->GetSprites().back())){
                                 int j = ball->GetSprites().size();
                                 ball->ballErase(j-1);
                                 addBall = true;
@@ -210,8 +209,8 @@ namespace APlusPlus
                         star -> RandomiseStarOffset();
                         star -> SpawnStar();
                         addStar = false;
-                        for(int i = 0; i < pipeSprite.size(); i++){
-                            if(collision.CheckSpriteCollision(pipeSprite.at(i), star-> GetSprites().back())){
+                        for(int i = 0; i < treeSprite.size(); i++){
+                            if(collision.CheckSpriteCollision(treeSprite.at(i), star-> GetSprites().back())){
                                 int j = star->GetSprites().size();
                                 star -> starErase(j-1);
                                 addStar = true;
@@ -225,6 +224,9 @@ namespace APlusPlus
                 
                 // for land collision detection
                 std::vector<sf::Sprite> landSprite = land->GetSprites();
+                std::vector<sf::Sprite> ballSprite = ball-> GetSprites();
+                std::vector<sf::Sprite> starSprite = star -> GetSprites();
+                
                 
                 for(int i = 0; i < landSprite.size(); i++)
                 {
@@ -240,20 +242,34 @@ namespace APlusPlus
                 {
                     // for pipe collision detection
                     
-                    for(int i = 0; i < pipeSprite.size(); i++)
+                    for(int i = 0; i < treeSprite.size(); i++)
                     {
-                        if(collision.CheckSpriteCollision(pipeSprite.at(i), 0.85f, turtle->GetSprite(), DETECTION_SCALE))
+                        if(collision.CheckSpriteCollision(treeSprite.at(i), 0.85f, turtle->GetSprite(), DETECTION_SCALE))
                         {
                             _gameState = GameStates::eGameOver;
                             //_backgroundSound.stop();
                             _hitSound.play();
                             _dieSound.play();
                         }
+                        for(int j = 0; j < starSprite.size();j++){
+                            if(collision.CheckSpriteCollision(treeSprite.at(i), 0.5f, starSprite.at(j) ,DETECTION_SCALE )){
+                                star -> starErase(j);
+                                break;
+                            }
+                        }
+                        
+                        for(int j = 0; j < ballSprite.size();j++){
+                            if(collision.CheckSpriteCollision(treeSprite.at(i), 0.5f, ballSprite.at(j) ,DETECTION_SCALE )){
+                                ball -> ballErase(j);
+                                break;
+                            }
+                        }
+                        
                     }
                 }
                 
                 // for ball collison detection
-                std::vector<sf::Sprite> ballSprite = ball-> GetSprites();
+                ballSprite = ball-> GetSprites();
                 for(int i = 0; i < ballSprite.size(); i++)
                 {
                     if(collision.CheckSpriteCollision(ballSprite.at(i), 1.0f, turtle->GetSprite(), DETECTION_SCALE))
@@ -270,7 +286,7 @@ namespace APlusPlus
                 }
                 
                 // for star collison detection
-                std::vector<sf::Sprite> starSprite = star -> GetSprites();
+                starSprite = star -> GetSprites();
                 for(int i = 0; i < starSprite.size(); i++)
                 {
                     if(collision.CheckSpriteCollision(starSprite.at(i), 1.0f, turtle ->GetSprite(), DETECTION_SCALE))
@@ -338,9 +354,10 @@ namespace APlusPlus
         
         this->land->DrawLand();
         
-        //if(_gameState == GameStates::ePause) this -> _data -> window.draw(this->_click);
+        if(_gameState == GameStates::ePause) this -> _data -> window.draw(this->_click);
         
         this->_data->window.display();
         
     }
 }
+
